@@ -1,11 +1,12 @@
 import { useRef } from "react";
 import { HeatmapLayer } from "react-leaflet-heatmap-layer-v3";
+import ReactLeafletGoogleLayer from "react-leaflet-google-layer";
 import { LayersControl, MapContainer, TileLayer } from "react-leaflet";
 
 import { generateHeatmapData } from "./utils/helper";
 import LeafletVelocity from "./components/LeafletVelocity";
 
-const numPoints = 1;
+const numPoints = 1000;
 const vietnamHeatmapData = generateHeatmapData(numPoints);
 
 function App() {
@@ -14,19 +15,7 @@ function App() {
 	return (
 		<div className="w-full h-full">
 			<MapContainer
-				zoom={10}
-				minZoom={12}
-				boxZoom={false}
-				bounds={[
-					[8.18, 102.14],
-					[23.39, 109.46],
-				]}
-				maxBounds={[
-					[8.18, 102.14],
-					[23.39, 109.46],
-				]}
-				preferCanvas={true}
-				doubleClickZoom={false}
+				zoom={13}
 				scrollWheelZoom={true}
 				center={[14.0583, 108.2772]}
 				style={{ width: "100%", height: "100%" }}
